@@ -401,3 +401,290 @@ function updateCurrentConversation(){
     renderSidebar();
 
 }
+/*==============================
+    Event Listener
+==============================*/
+
+historyList?.addEventListener(
+
+"click",
+
+(event)=>{
+
+    const item=
+
+    event.target.closest(".historyItem");
+
+    if(!item){
+
+        return;
+
+    }
+
+    switchConversation(
+
+        item.dataset.id
+
+    );
+
+});
+
+newChatBtn?.addEventListener(
+
+"click",
+
+()=>{
+
+    conversation=[];
+
+    messages.innerHTML="";
+
+    createConversation();
+
+});
+
+searchHistory?.addEventListener(
+
+"input",
+
+(event)=>{
+
+    filterConversation(
+
+        event.target.value
+
+    );
+
+});
+
+/*==============================
+    Context Menu
+==============================*/
+
+historyList?.addEventListener(
+
+"contextmenu",
+
+(event)=>{
+
+    event.preventDefault();
+
+    const item=
+
+    event.target.closest(".historyItem");
+
+    if(!item){
+
+        return;
+
+    }
+
+    const id=item.dataset.id;
+
+    const action=prompt(
+
+        "rename / delete"
+
+    );
+
+    if(!action){
+
+        return;
+
+    }
+
+    if(
+
+        action.toLowerCase()==="rename"
+
+    ){
+
+        const title=prompt(
+
+            "New title"
+
+        );
+
+        if(title){
+
+            renameConversation(
+
+                id,
+
+                title
+
+            );
+
+        }
+
+    }
+
+    if(
+
+        action.toLowerCase()==="delete"
+
+    ){
+
+        if(
+
+            confirm(
+
+                "Delete this conversation?"
+
+            )
+
+        ){
+
+            deleteConversation(id);
+
+        }
+
+    }
+
+});
+
+/*==============================
+    Auto Save
+==============================*/
+
+setInterval(
+
+()=>{
+
+    updateCurrentConversation();
+
+},
+
+5000
+
+);
+
+window.addEventListener(
+
+"beforeunload",
+
+updateCurrentConversation
+
+);
+
+/*==============================
+    Mobile
+==============================*/
+
+sidebarToggle?.addEventListener(
+
+"click",
+
+toggleSidebar
+
+);
+
+sidebarClose?.addEventListener(
+
+"click",
+
+closeSidebar
+
+);
+
+document.addEventListener(
+
+"click",
+
+(event)=>{
+
+    if(
+
+        window.innerWidth>768
+
+    ){
+
+        return;
+
+    }
+
+    if(
+
+        !sidebar.contains(event.target)
+
+        &&
+
+        !event.target.closest(
+
+            "#toggleSidebar"
+
+        )
+
+    ){
+
+        closeSidebar();
+
+    }
+
+});
+
+/*==============================
+    Initialize
+==============================*/
+
+function initSidebar(){
+
+    loadSidebar();
+
+    if(
+
+        conversations.length===0
+
+    ){
+
+        createConversation();
+
+    }
+
+    renderSidebar();
+
+    console.log(
+
+        "%cSidebar Ready",
+
+        "color:#22c55e;font-weight:bold;"
+
+    );
+
+}
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+initSidebar
+
+);
+
+/*==============================
+    Public API
+==============================*/
+
+window.CheemSidebar={
+
+    openSidebar,
+
+    closeSidebar,
+
+    toggleSidebar,
+
+    createConversation,
+
+    switchConversation,
+
+    renameConversation,
+
+    deleteConversation,
+
+    updateCurrentConversation,
+
+    saveSidebar,
+
+    loadSidebar
+
+};
