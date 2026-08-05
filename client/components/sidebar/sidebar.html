@@ -1,0 +1,256 @@
+/*
+=========================================================
+    Cheem Coding Sidebar Component
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+
+<aside
+
+class="cheem-sidebar"
+
+id="cheemSidebar">
+
+
+    <div class="sidebar-header">
+
+
+        <div class="sidebar-brand">
+
+
+            <img
+
+            src="../../assets/logo/OIP.jpg"
+
+            alt="Cheem Coding">
+
+
+            <span>
+
+                Cheem Coding
+
+            </span>
+
+
+        </div>
+
+
+        <button
+
+        class="sidebar-collapse"
+
+        id="sidebarCollapse">
+
+
+            ☰
+
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="sidebar-actions">
+
+
+        <button
+
+        class="new-chat-button"
+
+        id="sidebarNewChat">
+
+
+            <span>
+
+                ＋
+
+            </span>
+
+
+            New Chat
+
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="sidebar-section">
+
+
+        <h3>
+
+            Conversations
+
+        </h3>
+
+
+        <div
+
+        class="conversation-list"
+
+        id="conversationList">
+
+
+            <!-- History items load here -->
+
+
+        </div>
+
+
+    </div>
+    /*==============================
+    History Template
+==============================*/
+
+
+<template id="conversationTemplate">
+
+    <div
+
+    class="conversation-item">
+
+
+        <div class="conversation-icon">
+
+            💬
+
+        </div>
+
+
+        <div class="conversation-info">
+
+
+            <span
+
+            class="conversation-title">
+
+            </span>
+
+
+            <small
+
+            class="conversation-time">
+
+            </small>
+
+
+        </div>
+
+
+        <button
+
+        class="conversation-menu">
+
+
+            ⋮
+
+
+        </button>
+
+
+    </div>
+
+</template>
+
+
+
+<!--==============================
+    Sidebar Search
+==============================-->
+
+
+<div
+
+class="sidebar-search">
+
+
+    <input
+
+    id="sidebarSearchInput"
+
+    type="text"
+
+    placeholder="Search chats...">
+
+
+</div>
+
+
+
+<!--==============================
+    User Area
+==============================-->
+
+
+<div
+
+class="sidebar-user"
+
+id="sidebarUser">
+
+
+    <img
+
+    id="sidebarAvatar"
+
+    src="../../assets/images/default-avatar.png"
+
+    alt="Avatar">
+
+
+
+    <div class="sidebar-user-info">
+
+
+        <strong
+
+        id="sidebarUsername">
+
+            User
+
+        </strong>
+
+
+        <span
+
+        id="sidebarPlan">
+
+            Free
+
+        </span>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!--==============================
+    Footer
+==============================-->
+
+
+<div
+
+class="sidebar-footer">
+
+
+    <span>
+
+        Chat Cheem Coding - Meoz building
+
+    </span>
+
+
+</div>
+
+
+</aside>
