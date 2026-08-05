@@ -166,6 +166,261 @@ function renderSettings(){
 
 }
 /*==============================
+    Read Form
+==============================*/
+
+function updateSettingsFromForm(){
+
+    Object.keys(Settings)
+
+    .forEach(key=>{
+
+        const element=
+
+        document.getElementById(
+
+            key
+
+        );
+
+        if(!element){
+
+            return;
+
+        }
+
+        if(
+
+            element.type===
+
+            "checkbox"
+
+        ){
+
+            Settings[key]=
+
+            element.checked;
+
+        }
+
+        else if(
+
+            element.type===
+
+            "range"
+
+        ){
+
+            Settings[key]=
+
+            Number(
+
+                element.value
+
+            );
+
+        }
+
+        else{
+
+            Settings[key]=
+
+            element.value;
+
+        }
+
+    });
+
+}
+
+/*==============================
+    Apply Theme
+==============================*/
+
+function applyTheme(){
+
+    if(
+
+        window.CheemTheme
+
+    ){
+
+        CheemTheme.setTheme(
+
+            Settings.theme
+
+        );
+
+    }
+
+}
+
+/*==============================
+    Apply Font
+==============================*/
+
+function applyFontSize(){
+
+    document.documentElement
+
+    .style.fontSize=
+
+    Settings.fontSize+
+
+    "px";
+
+}
+
+/*==============================
+    Reset
+==============================*/
+
+function resetSettings(){
+
+    Settings={
+
+        ...DefaultSettings
+
+    };
+
+    renderSettings();
+
+    saveSettings();
+
+    applyTheme();
+
+    applyFontSize();
+
+}
+
+/*==============================
+    Export
+==============================*/
+
+function exportSettings(){
+
+    const blob=
+
+    new Blob(
+
+        [
+
+            JSON.stringify(
+
+                Settings,
+
+                null,
+
+                2
+
+            )
+
+        ],
+
+        {
+
+            type:
+
+            "application/json"
+
+        }
+
+    );
+
+    const url=
+
+    URL.createObjectURL(
+
+        blob
+
+    );
+
+    const link=
+
+    document.createElement(
+
+        "a"
+
+    );
+
+    link.href=url;
+
+    link.download=
+
+    "settings.json";
+
+    link.click();
+
+    URL.revokeObjectURL(
+
+        url
+
+    );
+
+}
+
+/*==============================
+    Import
+==============================*/
+
+function importSettings(file){
+
+    const reader=
+
+    new FileReader();
+
+    reader.onload=()=>{
+
+        try{
+
+            Settings={
+
+                ...DefaultSettings,
+
+                ...JSON.parse(
+
+                    reader.result
+
+                )
+
+            };
+
+            saveSettings();
+
+            renderSettings();
+
+            applyTheme();
+
+            applyFontSize();
+
+            showToast(
+
+                "Settings imported.",
+
+                "success"
+
+            );
+
+        }
+
+        catch{
+
+            showToast(
+
+                "Import failed.",
+
+                "error"
+
+            );
+
+        }
+
+    };
+
+    reader.readAsText(file);
+
+}
+/*==============================
     Events
 ==============================*/
 
