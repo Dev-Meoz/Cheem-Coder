@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cheem Coder</title>
+
+    <meta name="description"
+          content="Cheem Coder - AI Coding Assistant">
+
+    <link rel="icon"
+          href="../../assets/logo/favicon.ico">
+
+    <!-- Markdown -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+
+    <!-- Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="chat.css">
+
+</head>
+
+<body>
+
+<!--======================================================
+    Sidebar
+=======================================================-->
+
+<aside class="sidebar">
+
+    <div class="sidebarHeader">
+
+        <img
+
+            src="../../assets/logo/OIP.jpg"
+
+            class="logo"
+
+            alt="Cheem">
+
+        <div>
+
+            <h2>
+
+                Cheem Coder
+
+            </h2>
+
+            <span>
+
+                Alpha
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <button id="newChat">
+
+        <i class="fa-solid fa-plus"></i>
+
+        New Chat
+
+    </button>
+
+    <div class="historyTitle">
+
+        Recent Chats
+
+    </div>
+
+    <div
+        class="history"
+
+        id="history">
+
+        <!-- JS -->
+
+    </div>
+
+    <div class="sidebarBottom">
+
+        <button id="profileBtn">
+
+            <i class="fa-solid fa-user"></i>
+
+            Profile
+
+        </button>
+
+        <button id="settingBtn">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </button>
+
+        <button id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+<!--======================================================
+    Main
+=======================================================-->
+
+<main class="main">
+
+<!--======================================================
+    Topbar
+=======================================================-->
+
+<header class="topbar">
+
+    <button
+        id="toggleSidebar">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <div class="modelBox">
+
+        <select id="modelSelect">
+
+            <option>
+
+                Cheem Coder
+
+            </option>
+
+            <option>
+
+                GPT-5.5
+
+            </option>
+
+            <option>
+
+                GPT-4.1
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="topRight">
+
+        <button id="themeBtn">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!--======================================================
+    Chat Container
+=======================================================-->
+
+<section
+    class="chatContainer"
+
+    id="chatContainer">
+
+    <!--==================================================
+        Welcome
+    ===================================================-->
+
+    <div
+        class="welcome"
+
+        id="welcome">
+
+        <img
+
+            src="../../assets/logo/OIP.jpg"
+
+            class="welcomeLogo"
+
+            alt="Logo">
+
+        <h1>
+
+            Cheem Coder
+
+        </h1>
+
+        <h2>
+
+            AI Coding Assistant
+
+        </h2>
+
+        <p>
+
+            Ask anything about programming,
+            debugging,
+            algorithms,
+            AI,
+            web development,
+            mobile,
+            backend,
+            frontend
+            and much more.
+
+        </p>
+
+        <div class="suggestGrid">
+
+            <button class="suggest">
+
+                💻 Create a Login System
+
+            </button>
+
+            <button class="suggest">
+
+                🌐 Build HTML Landing Page
+
+            </button>
+
+            <button class="suggest">
+
+                ⚡ Optimize JavaScript Code
+
+            </button>
+
+            <button class="suggest">
+
+                🐍 Python Discord Bot
+
+            </button>
+
+            <button class="suggest">
+
+                🎮 Roblox Luau Script
+
+            </button>
+
+            <button class="suggest">
+
+                🚀 Express API
+
+            </button>
+
+        </div>
+
+    </div>
+
+<!--======================================================
+    Messages
+=======================================================-->
+
+<div
+
+    class="messages"
+
+    id="messages">
+
+</div>
+  <!--======================================================
+    Typing Indicator
+=======================================================-->
+
+<div
+    class="typing"
+    id="typingIndicator"
+    style="display:none;">
+
+    <div class="typingAvatar">
+
+        <img
+            src="../../assets/logo/OIP.jpg"
+            alt="AI">
+
+    </div>
+
+    <div class="typingBubble">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</div>
+
+</section>
+
+<!--======================================================
+    Prompt Area
+=======================================================-->
+
+<footer class="promptArea">
+
+    <div class="promptBox">
+
+        <button
+            id="uploadButton"
+            title="Upload">
+
+            <i class="fa-solid fa-paperclip"></i>
+
+        </button>
+
+        <input
+            type="file"
+            id="fileInput"
+            hidden>
+
+        <textarea
+
+            id="promptInput"
+
+            placeholder="Message Cheem Coder..."
+
+            rows="1"></textarea>
+
+        <button
+            id="voiceButton"
+            title="Voice">
+
+            <i class="fa-solid fa-microphone"></i>
+
+        </button>
+
+        <button
+            id="sendButton"
+            title="Send">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+    <div class="promptFooter">
+
+        Cheem Coder can make mistakes.
+        Verify important information.
+
+    </div>
+
+</footer>
+
+</main>
+
+<!--======================================================
+    Profile Modal
+=======================================================-->
+
+<div
+    class="modal"
+    id="profileModal">
+
+    <div class="modalContent">
+
+        <button
+            class="closeModal"
+            data-close="profileModal">
+
+            ×
+
+        </button>
+
+        <img
+            src="../../assets/logo/OIP.jpg"
+            class="profileAvatar"
+            alt="Avatar">
+
+        <h2 id="profileName">
+
+            Guest
+
+        </h2>
+
+        <p id="profileEmail">
+
+            guest@example.com
+
+        </p>
+
+    </div>
+
+</div>
+
+<!--======================================================
+    Settings Modal
+=======================================================-->
+
+<div
+    class="modal"
+    id="settingsModal">
+
+    <div class="modalContent">
+
+        <button
+            class="closeModal"
+            data-close="settingsModal">
+
+            ×
+
+        </button>
+
+        <h2>
+
+            Settings
+
+        </h2>
+
+        <label>
+
+            Theme
+
+            <select id="themeSelect">
+
+                <option value="dark">
+
+                    Dark
+
+                </option>
+
+                <option value="light">
+
+                    Light
+
+                </option>
+
+            </select>
+
+        </label>
+
+        <label>
+
+            Font Size
+
+            <input
+                type="range"
+                id="fontSize"
+                min="12"
+                max="22"
+                value="16">
+
+        </label>
+
+        <label>
+
+            AI Model
+
+            <select id="defaultModel">
+
+                <option>Cheem Coder</option>
+                <option>GPT-5.5</option>
+                <option>GPT-4.1</option>
+
+            </select>
+
+        </label>
+
+    </div>
+
+</div>
+
+<!--======================================================
+    Scripts
+=======================================================-->
+
+<script src="../../js/api.js"></script>
+<script src="../../js/storage.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/theme.js"></script>
+
+<script src="sidebar.js"></script>
+<script src="markdown.js"></script>
+<script src="history.js"></script>
+<script src="upload.js"></script>
+<script src="settings.js"></script>
+<script src="models.js"></script>
+<script src="conversation.js"></script>
+<script src="stream.js"></script>
+<script src="chat.js"></script>
+
+</body>
+</html>
+
