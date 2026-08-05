@@ -1,0 +1,1720 @@
+/*=========================================================
+    Cheem Coder Alpha
+    Authentication
+    auth.css
+    Part 1
+=========================================================*/
+
+/*=========================================================
+    Google Font
+=========================================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/*=========================================================
+    Reset
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#0b1120;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/*=========================================================
+    Variables
+=========================================================*/
+
+:root{
+
+    --primary:#3b82f6;
+
+    --primary-hover:#2563eb;
+
+    --secondary:#06b6d4;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --bg:#0b1120;
+
+    --card:#111827;
+
+    --card2:#1f2937;
+
+    --border:rgba(255,255,255,.08);
+
+    --text:#ffffff;
+
+    --text2:#94a3b8;
+
+    --shadow:0 25px 70px rgba(0,0,0,.35);
+
+}
+
+/*=========================================================
+    Background
+=========================================================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-5;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #08111f,
+
+            #111827,
+
+            #172554
+
+        );
+
+}
+
+/*=========================================================
+    Blur
+=========================================================*/
+
+.blur{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.75;
+
+}
+
+.blur1{
+
+    width:360px;
+
+    height:360px;
+
+    background:#2563eb;
+
+    top:-120px;
+
+    left:-120px;
+
+    animation:float1 10s ease-in-out infinite;
+
+}
+
+.blur2{
+
+    width:430px;
+
+    height:430px;
+
+    background:#06b6d4;
+
+    right:-130px;
+
+    bottom:-130px;
+
+    animation:float2 12s ease-in-out infinite;
+
+}
+
+/*=========================================================
+    Grid
+=========================================================*/
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(255,255,255,.03) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.03) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:42px 42px;
+
+}
+
+/*=========================================================
+    Main Container
+=========================================================*/
+
+.container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:70px;
+
+}
+
+/*=========================================================
+    Left Side
+=========================================================*/
+
+.left{
+
+    width:520px;
+
+}
+
+.logo{
+
+    width:130px;
+
+    height:130px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+        0 0 45px rgba(59,130,246,.35);
+
+    animation:logoFloat 3s ease-in-out infinite;
+
+}
+
+.left h1{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:16px;
+
+}
+
+.left p{
+
+    font-size:17px;
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================================
+    Features
+=========================================================*/
+
+.feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    margin-bottom:24px;
+
+}
+
+.feature span{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    background:rgba(59,130,246,.12);
+
+}
+
+.feature h3{
+
+    margin-bottom:6px;
+
+    font-size:17px;
+
+}
+
+.feature small{
+
+    color:var(--text2);
+
+    line-height:1.6;
+
+}
+
+/*=========================================================
+    Right Side
+=========================================================*/
+
+.right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex:1;
+
+}
+
+/*=========================================================
+    Card
+=========================================================*/
+
+.card{
+
+    width:470px;
+
+    padding:42px;
+
+    border-radius:24px;
+
+    background:
+
+        rgba(17,24,39,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    animation:cardShow .5s ease;
+
+}
+
+.card h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:var(--text2);
+
+    margin-bottom:30px;
+
+}
+
+/*=========================================================
+    Footer
+=========================================================*/
+
+footer{
+
+    position:fixed;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:13px;
+
+}
+
+/*=========================================================
+    Animation
+=========================================================*/
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes float1{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(40px,30px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes float2{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50px,-35px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+/*=========================================================
+    Part 2
+    Form + Input + Button
+=========================================================*/
+
+/*=========================================================
+    Form
+=========================================================*/
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+label{
+
+    display:block;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#d1d5db;
+
+    user-select:none;
+
+    margin-bottom:6px;
+
+}
+
+/*=========================================================
+    Input
+=========================================================*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.03);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+input::placeholder{
+
+    color:#6b7280;
+
+}
+
+input:hover{
+
+    border-color:#334155;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    background:rgba(59,130,246,.06);
+
+    box-shadow:
+
+        0 0 0 4px rgba(59,130,246,.15);
+
+}
+
+/*=========================================================
+    Password Box
+=========================================================*/
+
+.passwordBox{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.passwordBox input{
+
+    padding-right:60px;
+
+}
+
+.passwordBox button{
+
+    position:absolute;
+
+    top:50%;
+
+    right:8px;
+
+    transform:translateY(-50%);
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:#94a3b8;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.passwordBox button:hover{
+
+    background:rgba(255,255,255,.06);
+
+    color:#ffffff;
+
+}
+
+/*=========================================================
+    Remember
+=========================================================*/
+
+.remember{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:-4px;
+
+}
+
+.remember label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    color:var(--text2);
+
+}
+
+.remember input{
+
+    width:16px;
+
+    height:16px;
+
+    accent-color:var(--primary);
+
+}
+
+.remember a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.remember a:hover{
+
+    color:#60a5fa;
+
+}
+
+/*=========================================================
+    Terms
+=========================================================*/
+
+.terms{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    color:var(--text2);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+.terms input{
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:3px;
+
+    accent-color:var(--primary);
+
+}
+
+.terms a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+}
+
+.terms a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*=========================================================
+    Login Button
+=========================================================*/
+
+.loginButton{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            var(--secondary)
+
+        );
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.loginButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.loginButton:active{
+
+    transform:scale(.98);
+
+}
+
+.loginButton:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+}
+
+/*=========================================================
+    Divider
+=========================================================*/
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:28px 0;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.divider span{
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+/*=========================================================
+    Social Buttons
+=========================================================*/
+
+.google,
+
+.github{
+
+    width:100%;
+
+    height:54px;
+
+    margin-bottom:14px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.03);
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.google:hover,
+
+.github:hover{
+
+    background:rgba(59,130,246,.08);
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================================
+    Bottom Text
+=========================================================*/
+
+.bottom{
+
+    margin-top:24px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:var(--text2);
+
+}
+
+.bottom a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.bottom a:hover{
+
+    text-decoration:underline;
+
+}
+/*=========================================================
+    Part 3
+    Password Strength + Toast + Loading + Message
+=========================================================*/
+
+/*=========================================================
+    Password Strength
+=========================================================*/
+
+.passwordStrength{
+
+    margin-top:10px;
+
+}
+
+.strengthBar{
+
+    width:100%;
+
+    height:8px;
+
+    background:#1e293b;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#strengthFill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    transition:.3s;
+
+    background:#ef4444;
+
+}
+
+#strengthText{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    color:var(--text2);
+
+}
+
+.strength-weak{
+
+    background:#ef4444 !important;
+
+}
+
+.strength-medium{
+
+    background:#f59e0b !important;
+
+}
+
+.strength-good{
+
+    background:#3b82f6 !important;
+
+}
+
+.strength-strong{
+
+    background:#22c55e !important;
+
+}
+
+/*=========================================================
+    Loading Overlay
+=========================================================*/
+
+.loadingOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(10px);
+
+    z-index:9999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+}
+
+.loadingOverlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.loadingSpinner{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.15);
+
+    border-top-color:var(--primary);
+
+    animation:spin .8s linear infinite;
+
+}
+
+/*=========================================================
+    Toast
+=========================================================*/
+
+.toast{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:340px;
+
+    max-width:90%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.4);
+
+    transform:translateY(80px);
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:10000;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.toast.success{
+
+    border-left:5px solid var(--success);
+
+}
+
+.toast.error{
+
+    border-left:5px solid var(--danger);
+
+}
+
+.toast.warning{
+
+    border-left:5px solid var(--warning);
+
+}
+
+.toast.info{
+
+    border-left:5px solid var(--primary);
+
+}
+
+.toast h4{
+
+    font-size:17px;
+
+    margin-bottom:8px;
+
+}
+
+.toast p{
+
+    color:var(--text2);
+
+    line-height:1.6;
+
+    font-size:14px;
+
+}
+
+/*=========================================================
+    Success / Error Message
+=========================================================*/
+
+.message{
+
+    display:none;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+    animation:fadeMessage .3s;
+
+}
+
+.message.success{
+
+    display:block;
+
+    background:rgba(34,197,94,.12);
+
+    color:#86efac;
+
+    border:1px solid rgba(34,197,94,.3);
+
+}
+
+.message.error{
+
+    display:block;
+
+    background:rgba(239,68,68,.12);
+
+    color:#fca5a5;
+
+    border:1px solid rgba(239,68,68,.3);
+
+}
+
+/*=========================================================
+    Button Loading
+=========================================================*/
+
+.loginButton.loading{
+
+    pointer-events:none;
+
+    opacity:.85;
+
+    position:relative;
+
+}
+
+.loginButton.loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    right:18px;
+
+    top:50%;
+
+    margin-top:-10px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.35);
+
+    border-top-color:#ffffff;
+
+    animation:spin .8s linear infinite;
+
+}
+
+/*=========================================================
+    Input Error
+=========================================================*/
+
+input.error{
+
+    border-color:var(--danger);
+
+    box-shadow:
+
+        0 0 0 4px rgba(239,68,68,.15);
+
+}
+
+input.success{
+
+    border-color:var(--success);
+
+    box-shadow:
+
+        0 0 0 4px rgba(34,197,94,.15);
+
+}
+
+/*=========================================================
+    Fade Message
+=========================================================*/
+
+@keyframes fadeMessage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+    Spinner
+=========================================================*/
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/*=========================================================
+    Part 4
+    Responsive + Theme + Utilities + Animation
+=========================================================*/
+
+/*=========================================================
+    Hover Effects
+=========================================================*/
+
+.card{
+
+    transition:
+        transform .35s,
+        box-shadow .35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.45);
+
+}
+
+.logo{
+
+    transition:
+        transform .35s,
+        box-shadow .35s;
+
+}
+
+.logo:hover{
+
+    transform:scale(1.08) rotate(4deg);
+
+    box-shadow:
+
+        0 0 45px rgba(59,130,246,.55);
+
+}
+
+.feature{
+
+    transition:.3s;
+
+}
+
+.feature:hover{
+
+    transform:translateX(6px);
+
+}
+
+/*=========================================================
+    Focus Visible
+=========================================================*/
+
+button:focus-visible,
+
+input:focus-visible,
+
+a:focus-visible{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+/*=========================================================
+    Utilities
+=========================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.show{
+
+    display:block !important;
+
+}
+
+.flex{
+
+    display:flex !important;
+
+}
+
+.inline{
+
+    display:inline-block !important;
+
+}
+
+.textCenter{
+
+    text-align:center;
+
+}
+
+.textLeft{
+
+    text-align:left;
+
+}
+
+.textRight{
+
+    text-align:right;
+
+}
+
+.w100{
+
+    width:100%;
+
+}
+
+.mt10{
+
+    margin-top:10px;
+
+}
+
+.mt20{
+
+    margin-top:20px;
+
+}
+
+.mt30{
+
+    margin-top:30px;
+
+}
+
+.mb10{
+
+    margin-bottom:10px;
+
+}
+
+.mb20{
+
+    margin-bottom:20px;
+
+}
+
+.pointer{
+
+    cursor:pointer;
+
+}
+
+/*=========================================================
+    Light Theme
+=========================================================*/
+
+body.light{
+
+    background:#eef4ff;
+
+    color:#111827;
+
+}
+
+body.light .background{
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #ffffff,
+
+            #eef4ff,
+
+            #dbeafe
+
+        );
+
+}
+
+body.light .card{
+
+    background:rgba(255,255,255,.92);
+
+    color:#111827;
+
+    border:1px solid rgba(0,0,0,.08);
+
+}
+
+body.light input{
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+body.light .google,
+
+body.light .github{
+
+    background:#f1f5f9;
+
+    color:#111827;
+
+}
+
+body.light .left p,
+
+body.light .feature small,
+
+body.light .bottom,
+
+body.light footer{
+
+    color:#475569;
+
+}
+
+/*=========================================================
+    Tablet
+=========================================================*/
+
+@media(max-width:1100px){
+
+.container{
+
+    gap:45px;
+
+    padding:45px;
+
+}
+
+.left{
+
+    width:420px;
+
+}
+
+.left h1{
+
+    font-size:42px;
+
+}
+
+.card{
+
+    width:420px;
+
+}
+
+}
+
+/*=========================================================
+    Mobile
+=========================================================*/
+
+@media(max-width:900px){
+
+.container{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:30px;
+
+}
+
+.left{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.feature{
+
+    justify-content:center;
+
+}
+
+.right{
+
+    width:100%;
+
+}
+
+.card{
+
+    width:100%;
+
+    max-width:520px;
+
+}
+
+footer{
+
+    position:relative;
+
+    margin:35px 0 20px;
+
+}
+
+}
+
+/*=========================================================
+    Small Phone
+=========================================================*/
+
+@media(max-width:600px){
+
+.logo{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+.left h1{
+
+    font-size:32px;
+
+}
+
+.left p{
+
+    font-size:15px;
+
+}
+
+.card{
+
+    padding:28px;
+
+    border-radius:20px;
+
+}
+
+input{
+
+    height:52px;
+
+    font-size:14px;
+
+}
+
+.loginButton,
+
+.google,
+
+.github{
+
+    height:52px;
+
+}
+
+.toast{
+
+    left:15px;
+
+    right:15px;
+
+    width:auto;
+
+}
+
+}
+
+/*=========================================================
+    Reduce Motion
+=========================================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+/*=========================================================
+    Print
+=========================================================*/
+
+@media print{
+
+.background,
+
+.blur,
+
+.grid,
+
+footer{
+
+    display:none;
+
+}
+
+body{
+
+    background:#ffffff;
+
+    color:#000000;
+
+}
+
+.card{
+
+    box-shadow:none;
+
+    border:1px solid #d1d5db;
+
+}
+
+}
+
+/*=========================================================
+    End Of auth.css
+=========================================================*/
