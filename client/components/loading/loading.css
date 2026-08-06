@@ -1,0 +1,500 @@
+/*
+=========================================================
+    Cheem Coding Loading Component
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+
+.cheem-loading{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:8000;
+
+}
+
+
+.cheem-loading.active{
+
+    display:flex;
+
+}
+
+
+
+/*==============================
+    Overlay
+==============================*/
+
+.loading-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,23,42,.78);
+
+    backdrop-filter:blur(8px);
+
+}
+
+
+
+/*==============================
+    Container
+==============================*/
+
+.loading-container{
+
+    position:relative;
+
+    width:min(460px,92vw);
+
+    padding:36px 28px;
+
+    border-radius:22px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:0 24px 60px rgba(0,0,0,.28);
+
+    text-align:center;
+
+    z-index:2;
+
+    animation:loadingFade .3s ease;
+
+}
+
+
+
+/*==============================
+    Logo
+==============================*/
+
+.loading-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.loading-logo img{
+
+    width:84px;
+
+    height:84px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+
+
+
+/*==============================
+    Spinner
+==============================*/
+
+.loading-spinner{
+
+    width:54px;
+
+    height:54px;
+
+    margin:0 auto 20px;
+
+    border:5px solid var(--border);
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:loadingSpin .9s linear infinite;
+
+}
+
+
+
+/*==============================
+    Title
+==============================*/
+
+.loading-title{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:8px;
+
+}
+
+
+.loading-subtitle{
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    color:var(--text);
+
+    opacity:.72;
+
+}
+/*==============================
+    Progress
+==============================*/
+
+.loading-progress{
+
+    width:100%;
+
+    height:8px;
+
+    margin-top:24px;
+
+    background:var(--background);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+
+.loading-progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:var(--primary);
+
+    transition:width .3s ease;
+
+}
+
+
+
+/*==============================
+    Percentage
+==============================*/
+
+.loading-percent{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+
+/*==============================
+    Status
+==============================*/
+
+.loading-status{
+
+    margin-top:16px;
+
+    font-size:14px;
+
+    color:var(--text);
+
+    opacity:.85;
+
+}
+
+
+
+/*==============================
+    Tip
+==============================*/
+
+.loading-tip{
+
+    margin-top:14px;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+
+
+/*==============================
+    Step
+==============================*/
+
+.loading-step{
+
+    margin-top:14px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    opacity:.7;
+
+}
+
+
+
+/*==============================
+    Custom Slot
+==============================*/
+
+.loading-slot{
+
+    margin-top:18px;
+
+}
+
+
+
+/*==============================
+    Watermark
+==============================*/
+
+.loading-watermark{
+
+    margin-top:22px;
+
+    text-align:center;
+
+    font-size:11px;
+
+    opacity:.45;
+
+    user-select:none;
+
+}
+
+
+
+/*==============================
+    Accessibility
+==============================*/
+
+.loading-accessibility{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    overflow:hidden;
+
+    clip:rect(0,0,0,0);
+
+    white-space:nowrap;
+
+}
+/*==============================
+    Animation Container
+==============================*/
+
+.loading-animation{
+
+    width:100%;
+
+    min-height:20px;
+
+    margin-top:16px;
+
+}
+
+
+
+/*==============================
+    Scrollbar
+==============================*/
+
+.loading-container::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.loading-container::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+.loading-container::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+
+
+/*==============================
+    Animation
+==============================*/
+
+@keyframes loadingFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes loadingSpin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    .loading-container{
+
+        width:94vw;
+
+        padding:28px 20px;
+
+        border-radius:18px;
+
+    }
+
+
+    .loading-logo img{
+
+        width:72px;
+
+        height:72px;
+
+    }
+
+
+    .loading-title{
+
+        font-size:21px;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .loading-container{
+
+        padding:22px 16px;
+
+    }
+
+
+    .loading-spinner{
+
+        width:46px;
+
+        height:46px;
+
+    }
+
+
+    .loading-title{
+
+        font-size:18px;
+
+    }
+
+
+    .loading-subtitle{
+
+        font-size:13px;
+
+    }
+
+
+    .loading-tip{
+
+        font-size:12px;
+
+    }
+
+
+    .loading-percent,
+
+    .loading-status,
+
+    .loading-step{
+
+        font-size:12px;
+
+    }
+
+}
