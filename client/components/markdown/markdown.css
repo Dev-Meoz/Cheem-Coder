@@ -344,3 +344,169 @@
     background:rgba(255,255,255,.03);
 
 }
+/*==============================
+    Inline Code
+==============================*/
+
+.markdown code{
+
+    padding:2px 6px;
+
+    border-radius:6px;
+
+    background:var(--background);
+
+    border:1px solid var(--border);
+
+    font-family:Consolas,Monaco,monospace;
+
+    font-size:.95em;
+
+}
+
+
+
+/*==============================
+    Code Block
+==============================*/
+
+.markdown pre{
+
+    margin:24px 0;
+
+    padding:18px;
+
+    overflow:auto;
+
+    border-radius:14px;
+
+    background:#0f172a;
+
+    border:1px solid var(--border);
+
+}
+
+
+.markdown pre code{
+
+    padding:0;
+
+    border:none;
+
+    background:transparent;
+
+    color:#e2e8f0;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+
+
+/*==============================
+    Code Scrollbar
+==============================*/
+
+.markdown pre::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+
+.markdown pre::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+.markdown pre::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+
+
+/*==============================
+    Task List
+==============================*/
+
+.markdown input[type="checkbox"]{
+
+    margin-right:8px;
+
+    accent-color:var(--primary);
+
+}
+
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    .markdown{
+
+        font-size:15px;
+
+    }
+
+
+    .markdown h1{
+
+        font-size:1.9rem;
+
+    }
+
+
+    .markdown h2{
+
+        font-size:1.6rem;
+
+    }
+
+
+    .markdown table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .markdown{
+
+        font-size:14px;
+
+    }
+
+
+    .markdown pre{
+
+        padding:14px;
+
+    }
+
+
+    .markdown th,
+
+    .markdown td{
+
+        padding:10px;
+
+    }
+
+}
