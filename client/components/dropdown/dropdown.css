@@ -1,0 +1,492 @@
+/*
+=========================================================
+    Cheem Coding Dropdown Component
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+
+.dropdown{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+
+
+/*==============================
+    Trigger
+==============================*/
+
+.dropdown-trigger{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    min-width:180px;
+
+    padding:10px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+}
+
+
+.dropdown-trigger:hover{
+
+    border-color:var(--primary);
+
+}
+
+
+.dropdown-trigger:focus-visible{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:2px;
+
+}
+
+
+
+/*==============================
+    Menu
+==============================*/
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:calc(100% + 8px);
+
+    left:0;
+
+    min-width:100%;
+
+    max-height:320px;
+
+    overflow-y:auto;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    box-shadow:0 16px 36px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(8px);
+
+    transition:.2s ease;
+
+    z-index:2000;
+
+}
+
+
+.dropdown.open .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+
+
+/*==============================
+    Item
+==============================*/
+
+.dropdown-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:100%;
+
+    padding:12px 16px;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--text);
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+}
+
+
+.dropdown-item:hover{
+
+    background:var(--background);
+
+}
+
+
+.dropdown-item.active{
+
+    background:rgba(99,102,241,.12);
+
+    color:var(--primary);
+
+}
+/*==============================
+    Divider
+==============================*/
+
+.dropdown-divider{
+
+    height:1px;
+
+    margin:8px 0;
+
+    background:var(--border);
+
+}
+
+
+
+/*==============================
+    Icon
+==============================*/
+
+.dropdown-icon{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:18px;
+
+    height:18px;
+
+    flex-shrink:0;
+
+}
+
+
+
+/*==============================
+    Badge
+==============================*/
+
+.dropdown-badge{
+
+    margin-left:auto;
+
+    padding:2px 8px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+
+/*==============================
+    Checkbox / Radio
+==============================*/
+
+.dropdown-check{
+
+    margin-right:8px;
+
+    accent-color:var(--primary);
+
+}
+
+
+.dropdown-radio{
+
+    margin-right:8px;
+
+    accent-color:var(--primary);
+
+}
+
+
+
+/*==============================
+    Search
+==============================*/
+
+.dropdown-search{
+
+    width:100%;
+
+    padding:10px 12px;
+
+    border:none;
+
+    border-bottom:1px solid var(--border);
+
+    background:transparent;
+
+    color:var(--text);
+
+    outline:none;
+
+}
+
+
+
+/*==============================
+    Scrollbar
+==============================*/
+
+.dropdown-menu::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.dropdown-menu::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+
+.dropdown-menu::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+
+/*==============================
+    Submenu
+==============================*/
+
+.dropdown-submenu{
+
+    position:relative;
+
+}
+
+
+.dropdown-submenu-menu{
+
+    position:absolute;
+
+    top:0;
+
+    left:100%;
+
+    min-width:200px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(8px);
+
+    transition:.2s ease;
+
+}
+
+
+.dropdown-submenu:hover
+
+.dropdown-submenu-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+
+}
+
+
+
+/*==============================
+    Disabled
+==============================*/
+
+.dropdown-item.disabled{
+
+    opacity:.45;
+
+    pointer-events:none;
+
+}
+/*==============================
+    Arrow
+==============================*/
+
+.dropdown-arrow{
+
+    transition:transform .2s ease;
+
+}
+
+
+.dropdown.open
+
+.dropdown-arrow{
+
+    transform:rotate(180deg);
+
+}
+
+
+
+/*==============================
+    Animation
+==============================*/
+
+@keyframes dropdownFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.dropdown.open
+
+.dropdown-menu{
+
+    animation:dropdownFade .2s ease;
+
+}
+
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    .dropdown{
+
+        width:100%;
+
+    }
+
+
+    .dropdown-trigger{
+
+        width:100%;
+
+    }
+
+
+    .dropdown-menu{
+
+        width:100%;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .dropdown-item{
+
+        padding:10px 14px;
+
+        font-size:14px;
+
+    }
+
+
+    .dropdown-search{
+
+        font-size:14px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Print
+==============================*/
+
+@media print{
+
+    .dropdown-menu{
+
+        display:none !important;
+
+    }
+
+
+    .dropdown-trigger{
+
+        border:1px solid #000;
+
+        box-shadow:none;
+
+    }
+
+}
