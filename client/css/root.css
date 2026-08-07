@@ -1,0 +1,253 @@
+/*
+=========================================================
+    Cheem Coding Root Variables
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+:root{
+
+    /*==============================
+        Colors
+    ==============================*/
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+    --primary-light:#818cf8;
+
+    --secondary:#06b6d4;
+    --success:#22c55e;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+    --info:#3b82f6;
+
+    --background:#f8fafc;
+    --surface:#ffffff;
+    --surface-2:#f1f5f9;
+
+    --text:#0f172a;
+    --text-muted:#64748b;
+
+    --border:#e2e8f0;
+
+    /*==============================
+        Typography
+    ==============================*/
+
+    --font-family:
+        "Inter",
+        "Segoe UI",
+        sans-serif;
+
+    --font-mono:
+        "JetBrains Mono",
+        monospace;
+
+    --font-size-xs:12px;
+    --font-size-sm:14px;
+    --font-size-md:16px;
+    --font-size-lg:18px;
+    --font-size-xl:22px;
+    --font-size-2xl:28px;
+
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-semibold:600;
+    --font-weight-bold:700;
+
+    --line-height:1.6;
+
+    /*==============================
+        Radius
+    ==============================*/
+
+    --radius-xs:4px;
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:18px;
+    --radius-xl:24px;
+    --radius-full:999px;
+
+    /*==============================
+        Spacing
+    ==============================*/
+
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:48px;
+}
+:root{
+
+    /*==============================
+        Shadows
+    ==============================*/
+
+    --shadow-xs:
+        0 1px 2px rgba(15,23,42,.05);
+
+    --shadow-sm:
+        0 2px 6px rgba(15,23,42,.08);
+
+    --shadow-md:
+        0 8px 20px rgba(15,23,42,.10);
+
+    --shadow-lg:
+        0 16px 40px rgba(15,23,42,.14);
+
+    --shadow-xl:
+        0 24px 60px rgba(15,23,42,.18);
+
+    /*==============================
+        Transition
+    ==============================*/
+
+    --transition-fast:.15s ease;
+
+    --transition-normal:.25s ease;
+
+    --transition-slow:.4s ease;
+
+    /*==============================
+        Z-Index
+    ==============================*/
+
+    --z-dropdown:1000;
+    --z-sticky:1100;
+    --z-fixed:1200;
+    --z-overlay:1300;
+    --z-modal:1400;
+    --z-popup:1500;
+    --z-toast:1600;
+    --z-tooltip:1700;
+
+    /*==============================
+        Layout
+    ==============================*/
+
+    --container-width:1440px;
+
+    --navbar-height:64px;
+
+    --sidebar-width:280px;
+
+    --sidebar-collapse-width:80px;
+
+    --chat-max-width:960px;
+
+    --message-max-width:760px;
+
+    --profile-width:420px;
+
+    /*==============================
+        Code Block
+    ==============================*/
+
+    --code-bg:#0f172a;
+
+    --code-text:#f8fafc;
+
+    --code-border:#1e293b;
+
+    --code-radius:12px;
+
+    --code-font-size:14px;
+
+    --code-line-height:1.7;
+
+    /*==============================
+        Animation
+    ==============================*/
+
+    --duration-fast:150ms;
+
+    --duration-normal:250ms;
+
+    --duration-slow:450ms;
+
+    --duration-extra:700ms;
+
+    --easing:
+        cubic-bezier(
+            .4,
+            0,
+            .2,
+            1
+        );
+
+}
+:root{
+
+    /*==============================
+        Breakpoints
+    ==============================*/
+
+    --breakpoint-xs:480px;
+
+    --breakpoint-sm:640px;
+
+    --breakpoint-md:768px;
+
+    --breakpoint-lg:1024px;
+
+    --breakpoint-xl:1280px;
+
+    --breakpoint-2xl:1536px;
+
+    /*==============================
+        Scrollbar
+    ==============================*/
+
+    --scrollbar-size:10px;
+
+    --scrollbar-radius:999px;
+
+    --scrollbar-track:#f1f5f9;
+
+    --scrollbar-thumb:#94a3b8;
+
+    --scrollbar-thumb-hover:#64748b;
+
+    /*==============================
+        Selection
+    ==============================*/
+
+    --selection-bg:#6366f1;
+
+    --selection-text:#ffffff;
+
+    /*==============================
+        Focus
+    ==============================*/
+
+    --focus-ring-color:#6366f1;
+
+    --focus-ring-width:2px;
+
+    --focus-ring-offset:2px;
+
+    /*==============================
+        Safe Area
+    ==============================*/
+
+    --safe-top:env(safe-area-inset-top);
+
+    --safe-right:env(safe-area-inset-right);
+
+    --safe-bottom:env(safe-area-inset-bottom);
+
+    --safe-left:env(safe-area-inset-left);
+
+    /*==============================
+        Print
+    ==============================*/
+
+    --print-background:#ffffff;
+
+    --print-text:#000000;
+
+    --print-border:#cccccc;
+
+}
