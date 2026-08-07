@@ -1,0 +1,94 @@
+/*
+=========================================================
+    Cheem Coding Animation
+=========================================================
+*/
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes scaleIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        transform:translateX(-100%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
+
+@keyframes spin{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
+
+.fade-in{
+    animation:fadeIn var(--duration-normal) var(--easing);
+}
+
+.fade-up{
+    animation:fadeUp var(--duration-normal) var(--easing);
+}
+
+.fade-down{
+    animation:fadeDown var(--duration-normal) var(--easing);
+}
+
+.scale-in{
+    animation:scaleIn var(--duration-normal) var(--easing);
+}
+
+.slide-left{
+    animation:slideLeft var(--duration-normal) var(--easing);
+}
+
+.slide-right{
+    animation:slideRight var(--duration-normal) var(--easing);
+}
+
+.spin{
+    animation:spin 1s linear infinite;
+}
