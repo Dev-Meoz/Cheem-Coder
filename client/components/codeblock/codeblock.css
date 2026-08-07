@@ -1,0 +1,546 @@
+/*
+=========================================================
+    Cheem Coding CodeBlock Component
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+
+.codeblock{
+
+    position:relative;
+
+    width:100%;
+
+    margin:24px 0;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:#0f172a;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 32px rgba(0,0,0,.22);
+
+}
+
+
+
+/*==============================
+    Header
+==============================*/
+
+
+.codeblock-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 16px;
+
+    background:#111827;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.codeblock-language{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#e5e7eb;
+
+}
+
+
+.codeblock-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+
+/*==============================
+    Buttons
+==============================*/
+
+
+.codeblock-button{
+
+    min-width:34px;
+
+    height:34px;
+
+    padding:0 12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1f2937;
+
+    color:#f8fafc;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+}
+
+
+.codeblock-button:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+
+/*==============================
+    Content
+==============================*/
+
+
+.codeblock-content{
+
+    position:relative;
+
+    overflow:auto;
+
+}
+
+
+.codeblock pre{
+
+    margin:0;
+
+    padding:20px;
+
+    background:transparent;
+
+}
+
+
+.codeblock pre code{
+
+    display:block;
+
+    color:#e2e8f0;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    font-family:Consolas,Monaco,"Courier New",monospace;
+
+}
+/*==============================
+    Filename
+==============================*/
+
+.codeblock-filename{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:0 10px;
+
+    height:30px;
+
+    border-radius:8px;
+
+    background:#1e293b;
+
+    color:#cbd5e1;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+
+/*==============================
+    Copy Badge
+==============================*/
+
+.codeblock-copy-status{
+
+    position:absolute;
+
+    top:14px;
+
+    right:16px;
+
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:11px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s ease;
+
+}
+
+
+.codeblock-copy-status.show{
+
+    opacity:1;
+
+}
+
+
+
+/*==============================
+    Line Numbers
+==============================*/
+
+.codeblock .line-numbers{
+
+    user-select:none;
+
+    color:#64748b;
+
+    margin-right:18px;
+
+    text-align:right;
+
+}
+
+
+.codeblock .line-numbers span{
+
+    display:block;
+
+}
+
+
+
+/*==============================
+    Diff
+==============================*/
+
+.codeblock .line-added{
+
+    background:rgba(22,163,74,.12);
+
+}
+
+
+.codeblock .line-removed{
+
+    background:rgba(220,38,38,.12);
+
+}
+
+
+.codeblock .line-modified{
+
+    background:rgba(245,158,11,.12);
+
+}
+
+
+
+/*==============================
+    Selection
+==============================*/
+
+.codeblock pre::selection,
+
+.codeblock code::selection{
+
+    background:rgba(99,102,241,.35);
+
+}
+
+
+
+/*==============================
+    Scrollbar
+==============================*/
+
+.codeblock-content::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+
+.codeblock-content::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+
+.codeblock-content::-webkit-scrollbar-thumb{
+
+    background:#475569;
+
+    border-radius:999px;
+
+}
+
+
+.codeblock-content::-webkit-scrollbar-thumb:hover{
+
+    background:#64748b;
+
+}
+
+
+
+/*==============================
+    Terminal Mode
+==============================*/
+
+.codeblock.terminal{
+
+    background:#05070d;
+
+}
+
+
+.codeblock.terminal .codeblock-header{
+
+    background:#0f172a;
+
+}
+/*==============================
+    Fold Button
+==============================*/
+
+.codeblock-fold{
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+}
+
+
+.codeblock-fold:hover{
+
+    color:var(--primary);
+
+}
+
+
+.codeblock.collapsed .codeblock-content{
+
+    display:none;
+
+}
+
+
+
+/*==============================
+    Active Line
+==============================*/
+
+.codeblock .line-active{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+
+
+/*==============================
+    Fullscreen
+==============================*/
+
+.codeblock.fullscreen{
+
+    position:fixed;
+
+    inset:20px;
+
+    width:auto;
+
+    height:auto;
+
+    margin:0;
+
+    z-index:9999;
+
+    border-radius:18px;
+
+}
+
+
+.codeblock.fullscreen .codeblock-content{
+
+    height:calc(100% - 58px);
+
+}
+
+
+.codeblock.fullscreen pre{
+
+    height:100%;
+
+}
+
+
+
+/*==============================
+    Animation
+==============================*/
+
+.codeblock{
+
+    animation:codeblockFade .25s ease;
+
+}
+
+
+@keyframes codeblockFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    .codeblock-header{
+
+        flex-wrap:wrap;
+
+        gap:10px;
+
+    }
+
+
+    .codeblock pre{
+
+        padding:16px;
+
+    }
+
+
+    .codeblock-button{
+
+        height:32px;
+
+        font-size:12px;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .codeblock-language{
+
+        font-size:12px;
+
+    }
+
+
+    .codeblock pre code{
+
+        font-size:13px;
+
+    }
+
+
+    .codeblock-filename{
+
+        max-width:140px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+        white-space:nowrap;
+
+    }
+
+}
+
+
+
+/*==============================
+    Print
+==============================*/
+
+@media print{
+
+    .codeblock{
+
+        box-shadow:none;
+
+        border:1px solid #000;
+
+        page-break-inside:avoid;
+
+    }
+
+
+    .codeblock-button{
+
+        display:none;
+
+    }
+
+}
