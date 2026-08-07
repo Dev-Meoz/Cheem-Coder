@@ -1,0 +1,388 @@
+/*
+=========================================================
+    Cheem Coding Mobile Styles
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+/*==============================
+    Tablet
+==============================*/
+
+@media(max-width:1024px){
+
+    .container{
+
+        max-width:100%;
+
+        padding:0 20px;
+
+    }
+
+
+    .sidebar{
+
+        width:240px;
+
+    }
+
+
+    .chat-layout{
+
+        grid-template-columns:
+
+            240px
+
+            1fr;
+
+    }
+
+}
+
+
+
+/*==============================
+    Mobile
+==============================*/
+
+@media(max-width:768px){
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+
+    .container{
+
+        padding:0 16px;
+
+    }
+
+
+    .navbar{
+
+        height:56px;
+
+    }
+
+
+    .sidebar{
+
+        position:fixed;
+
+        top:0;
+
+        left:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        z-index:var(--z-overlay);
+
+        transition:left var(--transition-normal);
+
+    }
+
+
+    .sidebar.open{
+
+        left:0;
+
+    }
+
+
+    .chat-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/*==============================
+    Chat
+==============================*/
+
+@media(max-width:768px){
+
+    .chat-container{
+
+        padding:12px;
+
+    }
+
+
+    .chat-messages{
+
+        gap:12px;
+
+    }
+
+
+    .message{
+
+        max-width:100%;
+
+    }
+
+}
+
+
+
+/*==============================
+    Input
+==============================*/
+
+@media(max-width:768px){
+
+    .chat-input{
+
+        padding:10px;
+
+        border-radius:16px;
+
+    }
+
+
+    .chat-input textarea{
+
+        font-size:15px;
+
+        min-height:44px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Modal
+==============================*/
+
+@media(max-width:768px){
+
+    .modal{
+
+        width:calc(100% - 24px);
+
+        max-height:90vh;
+
+        border-radius:18px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Popup
+==============================*/
+
+@media(max-width:768px){
+
+    .popup{
+
+        width:calc(100% - 20px);
+
+        right:10px;
+
+        left:10px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Avatar & Buttons
+==============================*/
+
+@media(max-width:768px){
+
+    .avatar{
+
+        transform:scale(.92);
+
+    }
+
+
+    button{
+
+        min-height:42px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Grid
+==============================*/
+
+@media(max-width:768px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/*==============================
+    Small Phones
+==============================*/
+
+@media(max-width:480px){
+
+    html{
+
+        font-size:14px;
+
+    }
+
+
+    .container{
+
+        padding:0 12px;
+
+    }
+
+
+    .navbar{
+
+        height:52px;
+
+    }
+
+
+    .message{
+
+        font-size:14px;
+
+    }
+
+
+    .chat-input textarea{
+
+        font-size:14px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Landscape
+==============================*/
+
+@media (max-width:932px) and (orientation:landscape){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+
+    .modal{
+
+        max-height:80vh;
+
+    }
+
+
+    .chat-messages{
+
+        padding-bottom:16px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Safe Area
+==============================*/
+
+@supports(padding:max(0px)){
+
+    body{
+
+        padding-top:max(0px,var(--safe-top));
+
+        padding-right:max(0px,var(--safe-right));
+
+        padding-bottom:max(0px,var(--safe-bottom));
+
+        padding-left:max(0px,var(--safe-left));
+
+    }
+
+}
+
+
+
+/*==============================
+    Responsive Typography
+==============================*/
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+
+    h3{
+
+        font-size:1.3rem;
+
+    }
+
+
+    p{
+
+        line-height:1.7;
+
+    }
+
+}
+
+
+
+/*==============================
+    Mobile Print
+==============================*/
+
+@media print{
+
+    .sidebar,
+
+    .navbar,
+
+    .popup,
+
+    .toast{
+
+        display:none !important;
+
+    }
+
+}
