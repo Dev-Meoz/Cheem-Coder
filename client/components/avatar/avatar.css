@@ -1,0 +1,549 @@
+/*
+=========================================================
+    Cheem Coding Avatar Component
+    Chat Cheem Coding - Meoz building
+=========================================================
+*/
+
+
+.avatar{
+
+    position:relative;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    user-select:none;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:.25s ease;
+
+}
+
+
+
+/*==============================
+    Image
+==============================*/
+
+.avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+/*==============================
+    Initial
+==============================*/
+
+.avatar-initial{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:100%;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:var(--primary);
+
+}
+
+
+
+/*==============================
+    Sizes
+==============================*/
+
+.avatar.xs{
+
+    width:28px;
+
+    height:28px;
+
+}
+
+
+.avatar.sm{
+
+    width:36px;
+
+    height:36px;
+
+}
+
+
+.avatar.md{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+
+.avatar.lg{
+
+    width:64px;
+
+    height:64px;
+
+}
+
+
+.avatar.xl{
+
+    width:88px;
+
+    height:88px;
+
+}
+
+
+
+/*==============================
+    Hover
+==============================*/
+
+.avatar:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+/*==============================
+    Status
+==============================*/
+
+.avatar-status{
+
+    position:absolute;
+
+    right:2px;
+
+    bottom:2px;
+
+    width:12px;
+
+    height:12px;
+
+    border:2px solid var(--surface);
+
+    border-radius:50%;
+
+}
+
+
+.avatar.online .avatar-status{
+
+    background:#22c55e;
+
+}
+
+
+.avatar.offline .avatar-status{
+
+    background:#94a3b8;
+
+}
+
+
+.avatar.busy .avatar-status{
+
+    background:#ef4444;
+
+}
+
+
+.avatar.away .avatar-status{
+
+    background:#f59e0b;
+
+}
+
+
+
+/*==============================
+    Verified
+==============================*/
+
+.avatar-verified{
+
+    position:absolute;
+
+    left:-2px;
+
+    bottom:-2px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#3b82f6;
+
+    color:#fff;
+
+    font-size:11px;
+
+    border:2px solid var(--surface);
+
+}
+
+
+
+/*==============================
+    Group Avatar
+==============================*/
+
+.avatar-group{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.avatar-group .avatar{
+
+    margin-left:-10px;
+
+    border:2px solid var(--surface);
+
+}
+
+
+.avatar-group .avatar:first-child{
+
+    margin-left:0;
+
+}
+
+
+
+/*==============================
+    Variants
+==============================*/
+
+.avatar.rounded{
+
+    border-radius:16px;
+
+}
+
+
+.avatar.square{
+
+    border-radius:8px;
+
+}
+
+
+.avatar.border-primary{
+
+    border-color:var(--primary);
+
+}
+
+
+.avatar.border-success{
+
+    border-color:#22c55e;
+
+}
+
+
+.avatar.border-danger{
+
+    border-color:#ef4444;
+
+}
+
+
+
+/*==============================
+    Skeleton
+==============================*/
+
+.avatar.skeleton{
+
+    background:linear-gradient(
+
+        90deg,
+
+        #e5e7eb 25%,
+
+        #f3f4f6 50%,
+
+        #e5e7eb 75%
+
+    );
+
+    background-size:200% 100%;
+
+    animation:avatarSkeleton 1.4s infinite;
+
+}
+
+
+
+/*==============================
+    Upload Overlay
+==============================*/
+
+.avatar-upload{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    color:#fff;
+
+    opacity:0;
+
+    transition:.2s ease;
+
+}
+
+
+.avatar:hover .avatar-upload{
+
+    opacity:1;
+
+}
+
+
+
+/*==============================
+    Tooltip
+==============================*/
+
+.avatar-tooltip{
+
+    position:absolute;
+
+    top:calc(100% + 8px);
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:6px 10px;
+
+    border-radius:8px;
+
+    background:#111827;
+
+    color:#fff;
+
+    font-size:12px;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.2s ease;
+
+}
+
+
+.avatar:hover .avatar-tooltip{
+
+    opacity:1;
+
+}
+/*==============================
+    Focus
+==============================*/
+
+.avatar:focus-visible{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+
+
+/*==============================
+    Animation
+==============================*/
+
+@keyframes avatarSkeleton{
+
+    0%{
+
+        background-position:200% 0;
+
+    }
+
+    100%{
+
+        background-position:-200% 0;
+
+    }
+
+}
+
+
+@keyframes avatarFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+.avatar{
+
+    animation:avatarFade .25s ease;
+
+}
+
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media(max-width:768px){
+
+    .avatar.lg{
+
+        width:56px;
+
+        height:56px;
+
+    }
+
+
+    .avatar.xl{
+
+        width:76px;
+
+        height:76px;
+
+    }
+
+
+    .avatar-tooltip{
+
+        display:none;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .avatar.md{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+
+    .avatar.sm{
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+
+    .avatar-status{
+
+        width:10px;
+
+        height:10px;
+
+    }
+
+}
+
+
+
+/*==============================
+    Print
+==============================*/
+
+@media print{
+
+    .avatar-upload,
+
+    .avatar-tooltip{
+
+        display:none;
+
+    }
+
+
+    .avatar{
+
+        box-shadow:none;
+
+    }
+
+}
